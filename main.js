@@ -1,7 +1,6 @@
 //Part One
 function idAndUrl(idString, urlString){
-    const foundId = document.querySelector(idString)
-    foundId.src = urlString
+    document.querySelector(idString).src = urlString
 }
 
 idAndUrl('#image-1', 'https://media0.giphy.com/media/aFTt8wvDtqKCQ/giphy.gif?cid=790b761143c4557ff452c2a8424a621a152f25afa523222a&rid=giphy.gif')
@@ -9,16 +8,13 @@ idAndUrl('#image-2', 'https://media1.giphy.com/media/10we3R8dLZQ7hS/giphy.gif?ci
 idAndUrl('#image-3', 'https://media2.giphy.com/media/5JEWBLv0mZDYA/giphy.gif?cid=790b7611aa76d9ada720ea5bf961b8127171a53dced7259a&rid=giphy.gif')
 
 function lineThroughLi(){
-    const liElement = document.querySelector('ul>li:nth-child(1)')
-    liElement.style.textDecoration = 'line-through'
+    document.querySelector('ul>li:nth-child(1)').style.textDecoration = 'line-through'
 }
 
 lineThroughLi()
 
 function removesLastLi(){
-    const unorderedList = document.querySelector('ul')
-    const lastLi = document.querySelector('li:last-child')
-    unorderedList.removeChild(lastLi)
+    document.querySelector('ul').removeChild(document.querySelector('li:last-child'))
 }
 
 removesLastLi()
@@ -26,30 +22,25 @@ removesLastLi()
 
 //Part Two
 function addsToUl(element){
-    const newElement = document.createElement(element)
-    const foundUl = document.querySelector('#arguments')
-    foundUl.appendChild(newElement)
+    document.querySelector('#arguments').appendChild(document.createElement(element))
 }
 
 addsToUl('img')
 
 function fixedHeight(){
-    const foundImage = document.querySelector('img')
-    foundImage.style.height = '30px'
+    document.querySelector('img').style.height = '30px'
 }
 
 fixedHeight('#image-1')
 
 function invisibilityPotion(element){
-    const newElement = document.querySelector(element)
-    newElement.className = 'invisible'
+    document.querySelector(element).className = 'invisible'
 }
 
 invisibilityPotion('#thing-c')
 
 function sizeAndId(size, id){
-    const newId = document.querySelector(id)
-    newId.style.fontSize = size
+    document.querySelector(id).style.fontSize = size
 }
 
 sizeAndId('100px', '#thing-2')
